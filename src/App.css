@@ -104,6 +104,34 @@
   fill: #82bbcf;
 }
 
+/* Page Animations */
+.switch,
+.headline,
+.links {
+  animation: fade 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0.3s backwards;
+}
+
+.switch,
+.headline {
+  animation-delay: 0.5s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.6;
+  }
+}
+
 /* Large devices (desktops, iPad Pro, 992px and up) */
 @media (min-width: 992px) {
   .switch {
