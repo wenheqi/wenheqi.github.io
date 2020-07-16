@@ -1,0 +1,60 @@
+.themeSwitcherContainer {
+  display: block;
+  position: relative;
+}
+
+.themeSwitcherContainer input {
+  display: none;
+}
+
+.themeSwitcherContainer input + span::before {
+  content: "\01F315"; /* Full Moon */
+  font-size: 1rem;
+  animation-name: new-moon-to-full-moon;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+}
+
+.themeSwitcherContainer input:checked + span:before {
+  content: "\01F311"; /* New Moon */
+  font-size: 1rem;
+  animation-name: full-moon-to-new-moon;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes new-moon-to-full-moon {
+  0% {
+    content: "\01F311";
+  } /* New Moon */
+  25% {
+    content: "\01F312";
+  } /* Waxing Crescent Moon */
+  50% {
+    content: "\01F313";
+  } /* First Quarter Moon */
+  75% {
+    content: "\01F314";
+  } /* Waxing Gibbous Moon */
+  100% {
+    content: "\01F315";
+  } /* Full Moon */
+}
+
+@keyframes full-moon-to-new-moon {
+  0% {
+    content: "\01F315";
+  } /* Full Moon */
+  25% {
+    content: "\01F316";
+  } /* Waning Gibbous Moon */
+  50% {
+    content: "\01F317";
+  } /* Last Quarter Moon */
+  75% {
+    content: "\01F318";
+  } /* Waning Crescent Moon */
+  100% {
+    content: "\01F311";
+  } /* New Moon */
+}

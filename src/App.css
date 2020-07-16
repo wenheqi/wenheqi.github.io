@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Arkitech";
+  font-weight: 400;
+  src: local("Arkitech"), url(./fonts/Arkitech.medium.ttf) format("truetype");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #4f4f4f;
 }
 
-.App-link {
-  color: #61dafb;
+.app a {
+  text-decoration: none;
+  font: inherit;
+  color: #82bbcf;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.app a:hover {
+  color: #3e8eab;
+  transition: 0.2s ease-in;
+}
+
+.app a.usc {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.app a.usc:hover {
+  color: #990000; /* USC Cardinal */
+  -webkit-text-stroke: 0.8px #ffcc00;
+}
+
+.app a.htc {
+  font-family: "Arkitech";
+  font-size: smaller;
+}
+
+.app a.htc:hover {
+  color: #93d50b;
+}
+
+.app a.email:hover .email-mark {
+  fill: url(#email-mark-grad);
+}
+
+.app a.github:hover .gh-mark {
+  fill: url(#gh-mark-grad);
+}
+
+.app a.linkedin:hover .linkedin-mark {
+  fill: #0373b3;
+}
+
+.app a.codepen:hover .codepen-mark {
+  fill: #000000;
+}
+
+.app a.stackoverflow:hover .so-mark-0 {
+  fill: #bcbbbb;
+}
+
+.app a.stackoverflow:hover .so-mark-1 {
+  fill: #f48023;
+}
+
+.switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.headline {
+  font-size: 28px;
+  line-height: 44px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.5px;
+  margin-bottom: 35px;
+  margin-top: 10px;
+}
+
+.theme-dark {
+  background-color: #29263e;
+}
+
+.app.theme-dark {
+  color: #ffffff;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.links path {
+  fill: #82bbcf;
+}
+
+/* Large devices (desktops, iPad Pro, 992px and up) */
+@media (min-width: 992px) {
+  .switch {
+    justify-content: flex-end;
   }
 }
